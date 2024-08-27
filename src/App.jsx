@@ -17,22 +17,34 @@ function App() {
     setShowProject(false)
   };
 
- 
+
   const submitProject = (newProject) => {
-    setProjects(prevProjects => [...prevProjects, newProject]) ;
+    setProjects(prevProjects => [...prevProjects, newProject]);
     setShowProject(false);
   }
 
+  const deleteProject = (projectToBeDeleted) => {
+    setProjects(prevProjects =>
+      prevProjects.filter(project => project !== projectToBeDeleted)
+    );
+    setActiveProject(null);
+  }
   return (
     <section className="flex w-full ">
-      <SideBar addProject={addProject} projects={projects} setActiveProject={setActiveProject}  activeProject={activeProject}/>
+      <SideBar
+        addProject={addProject}
+        projects={projects}
+        setActiveProject={setActiveProject}
+        activeProject={activeProject}
+      />
       <MainPage
-       addProject={addProject} 
-       showProject={showProject}
-        cancelShowProject={cancelShowProject} 
+        addProject={addProject}
+        showProject={showProject}
+        cancelShowProject={cancelShowProject}
         onFormSubmit={submitProject}
         activeProject={activeProject}
-        />
+        deleteProject={deleteProject}
+      />
     </section>
   );
 }
