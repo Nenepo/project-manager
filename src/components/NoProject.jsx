@@ -1,5 +1,9 @@
+import { useContext } from "react"
 import image from "../assets/no-projects.png"
-function NoProject({addProject}) {
+import { ProjectContext } from "../store/Project-context"
+function NoProject() {
+ const {addProject} = useContext(ProjectContext)
+
   return (
     <div className="flex flex-col justify-center items-center space-y-4 h-screen">
       <img src={image} alt="" className="w-20 h-20" />

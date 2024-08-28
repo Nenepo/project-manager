@@ -9,8 +9,7 @@ function TaskForm() {
   };
 
   const addTask = () => {
-    if (task.trim() === "") return; // Prevent adding empty tasks
-
+    if (task.trim() === "") return; 
     setTasks((prevTasks) => [
       ...prevTasks,
       task,

@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import TaskForm from './TaskForm'
+import { ProjectContext } from '../store/Project-context'
 
-function ActiveProject({ activeProject , deleteProject}) {
+function ActiveProject({ activeProject }) {
+
+  // give the project an id so we can get the active project from there
+ const {deleteProject} = useContext(ProjectContext)
 
   const handleDelete = () => {
    deleteProject(activeProject)

@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import FormInput from "./FormInput";
 import { FORM_FIELDS } from "..";
+import { ProjectContext } from "../store/Project-context";
 
-function ProjectForm({ cancelShowProject, onFormSubmit }) {
+function ProjectForm() {
+   const {cancelShowProject, onFormSubmit} = useContext(ProjectContext)
+
   const initialFormData = {
     title: "",
     description: "",
@@ -74,8 +77,8 @@ function ProjectForm({ cancelShowProject, onFormSubmit }) {
           type={form.type}
           value={formData[form.name]}
           onChange={handleChange}
-          onFocus={() => handleFocus(form.name)} // Set active on focus
-          active={activeInput === form.name} // Check if this is the active input
+          onFocus={() => handleFocus(form.name)}
+          active={activeInput === form.name} 
         />
       ))}
     </form>

@@ -1,5 +1,10 @@
+import { useContext } from "react";
+import { ProjectContext } from "../store/Project-context";
 
-function SideBar({ addProject, projects, setActiveProject, activeProject }) {
+function SideBar({  setActiveProject, activeProject }) {
+ 
+const  { addProject, projects} =  useContext(ProjectContext)
+
   return (
     <div className="w-1/3 md:w-72 bg-green-950 rounded-r-xl mt-10 h-[93.5vh] pl-8 pt-20">
       <h2 className="uppercase text-stone-50  font-semibold">Your Projects</h2>
