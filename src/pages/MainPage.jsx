@@ -12,7 +12,7 @@ import ProjectForm from "../components/ProjectForm"
 // }, []);
 
 
-function MainPage({ showProject, activeProject, cancelShowProject, onFormSubmit }) {
+function MainPage({ showProject, activeProject}) {
  
 
   return (
